@@ -19,7 +19,7 @@ window.PV_SITE = {
   proPrice: "",
 
   // Where buyers reach you.
-  contactEmail: "",
+  contactEmail: "projectvisiopros@gmail.com",
 
   // Your legal pages on the web app (they exist at these paths once the server is deployed).
   privacyPath: "/privacy",

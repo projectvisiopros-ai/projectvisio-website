@@ -9,7 +9,7 @@ GitHub Pages is free for public repositories only (private repositories need a p
 ## 1. Publish the website
 
 1. On GitHub, create a new **public** repository named `projectvisio-website`.
-2. Upload the contents of this folder, not the folder itself, so that `index.html` sits at the top of the repository. On the repository page choose **Add file > Upload files**, drag in every file and the `fonts` and `images` folders, and commit. (Uploading through the browser accepts files up to 25 MiB; everything here is far smaller.)
+2. Upload the contents of this folder, not the folder itself, so that `index.html` sits at the top of the repository. On the repository page choose **Add file > Upload files**, drag in every file and the `fonts`, `images`, `media` and `demo` folders, and commit. (Uploading through the browser accepts files up to 25 MiB; everything here is far smaller.)
 3. Open **Settings > Pages**. Under **Build and deployment**, choose **Deploy from a branch**, select the `main` branch and the `/ (root)` folder, and save.
 4. After a minute or two the site is live at `https://<your-account>.github.io/projectvisio-website/`. The address is shown at the top of the Pages settings.
 
@@ -43,7 +43,26 @@ Edit `config.js` (on GitHub: open the file and choose the pencil icon), then com
 
 Anything not set yet is shown as "available soon" or hidden, so visitors never reach a broken link.
 
-## 4. Your own domain (optional)
+## 4. The interactive demo (by request)
+
+The demo page (`demo.html`) lets visitors request access by email (to `contactEmail` in `config.js`) and open the demo with an access code.
+
+- The demo itself is stored only in encrypted form (`demo/demo.bin`, AES-256-GCM with a key derived from the access code by PBKDF2-SHA256, 600,000 rounds). The file is public, like everything on this site, but it cannot be read without the code.
+- **Keep the access code out of this repository and out of any file here.** Send it by email only to organisations you approve.
+- Anyone who has the code can pass it on. To revoke access, or for a new version of the demo, encrypt again with a new code and replace `demo/demo.bin`:
+
+  ```bash
+  # in the private projectvisio repository
+  node tools/encrypt-demo.mjs ProjectVisio_Interactive_Demo.html ../projectvisio-website/demo/demo.bin
+  ```
+
+  The command prints the new code. The old code stops working as soon as the new file is published.
+
+## 5. The walkthrough video
+
+`media/projectvisio-walkthrough.mp4` plays without sound when the home page loads, with a button to turn the narration on; visitors who have asked their device to reduce motion see the cover image (`media/walkthrough-poster.webp`) and press play themselves. To replace the video, keep the same file name, keep it under 50 MB, and prepare it for streaming first: `ffmpeg -i new.mp4 -c copy -movflags +faststart media/projectvisio-walkthrough.mp4`. Captions are recommended: add a WebVTT file and a `<track>` element if you have a transcript.
+
+## 6. Your own domain (optional)
 
 In **Settings > Pages > Custom domain**, enter a domain such as `www.yourcompany.com` and create the DNS record GitHub shows you. Tick **Enforce HTTPS** once it becomes available.
 

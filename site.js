@@ -70,4 +70,30 @@
       }
     });
   });
+
+  // Walkthrough video: starts muted as soon as the page loads (browsers only allow silent
+  // autoplay), with a button to turn the narration on. Visitors who ask their device to reduce
+  // motion get the cover image and the player controls instead, and press play themselves.
+  var video = document.getElementById("walkthrough");
+  var sound = document.getElementById("walkthrough-sound");
+  if (video) {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var showSound = function () {
+      if (sound) sound.hidden = !video.muted || video.paused;
+    };
+    if (sound) {
+      sound.addEventListener("click", function () {
+        video.muted = false;
+        if (video.paused) video.play();
+        sound.hidden = true;
+      });
+    }
+    video.addEventListener("play", showSound);
+    video.addEventListener("pause", showSound);
+    video.addEventListener("volumechange", showSound);
+    if (!reduce) {
+      var p = video.play();
+      if (p && p.catch) p.catch(function () { /* autoplay blocked: the controls remain */ });
+    }
+  }
 })();

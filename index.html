@@ -32,8 +32,9 @@
           <span>ProjectVisio</span>
         </a>
         <nav aria-label="Main" class="nav">
+          <a href="#about">About</a>
           <a href="#product">Product</a>
-          <a href="#teams">Who it's for</a>
+          <a href="#demo">Demo</a>
           <a href="#get">Apps</a>
           <a href="#plans">Pricing</a>
           <a href="#security">Security</a>
@@ -56,25 +57,71 @@
           </p>
           <div class="actions actions--center">
             <a class="button" data-link="signup" href="#get">Create a free workspace</a>
-            <a class="button button--outline" data-link="contact" href="#contact">Book a walkthrough</a>
+            <a class="button button--outline" href="demo.html">Request the interactive demo</a>
           </div>
           <p class="hero__note">Free for up to 5 projects per workspace. No card needed.</p>
         </div>
         <div class="wrap">
-          <figure class="frame frame--hero">
+          <figure class="frame frame--hero" aria-labelledby="walkthrough-title">
             <div class="frame__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-            <img
-              src="images/product-dashboard.webp"
-              width="1600"
-              height="1000"
-              alt="The ProjectVisio portfolio dashboard: eight projects, a $17.8M approved budget, 50% of budget used and three projects needing attention."
-              fetchpriority="high"
-            />
+            <div class="video">
+              <video
+                id="walkthrough"
+                src="media/projectvisio-walkthrough.mp4"
+                poster="media/walkthrough-poster.webp"
+                width="1920"
+                height="1080"
+                muted
+                playsinline
+                controls
+                preload="metadata"
+                aria-describedby="walkthrough-desc"
+              ></video>
+              <button type="button" class="video__sound" id="walkthrough-sound" hidden>Turn on sound</button>
+            </div>
+            <figcaption class="video__caption">
+              <strong id="walkthrough-title">Watch the walkthrough</strong>
+              <span id="walkthrough-desc">
+                A four-minute narrated tour of the Projects Portfolio Dashboard: the gaps it closes, who it is for, and how it
+                reports on schedule, budget, milestones, risks and decisions. It starts without sound; use the button or the
+                player controls to hear the narration.
+              </span>
+            </figcaption>
           </figure>
         </div>
       </section>
 
-      <section class="section" id="teams" aria-labelledby="teams-title">
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="wrap about">
+          <div class="about__intro">
+            <h2 id="about-title">About ProjectVisio</h2>
+            <p class="about__tagline">Delivery Assured</p>
+            <p>
+              ProjectVisio is a portfolio oversight dashboard for ministries, departments and agencies that are accountable for
+              delivering public programmes. It brings the schedule, budget, milestones, risks and decisions of every project
+              into one clear, current view, and works as an early-warning system for leadership, so they can act before
+              problems become costly.
+            </p>
+            <p>
+              It is built for the people who answer for results: Permanent Secretaries, Ministers, chief executives, executive
+              directors and senior managers.
+            </p>
+          </div>
+          <div class="about__gaps">
+            <h3>The gaps it closes</h3>
+            <ul>
+              <li><b>Scattered information.</b> Updates sit in emails, spreadsheets and memos, so no one sees the whole portfolio at once.</li>
+              <li><b>Slow, manual reporting.</b> Quarterly reports take days to compile and are out of date when they reach leadership.</li>
+              <li><b>Warnings that come too late.</b> Slippage in schedule or spending is often found after the deadline has passed.</li>
+              <li><b>Inconsistent ratings.</b> Each project is judged differently, which makes fair comparison and prioritisation difficult.</li>
+              <li><b>Decisions that stall.</b> Issues that need an executive decision remain unresolved because they are not visible.</li>
+              <li><b>Records that disappear.</b> Key documents live in personal inboxes and drives, and leave when staff move on.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="teams" aria-labelledby="teams-title">
         <div class="wrap">
           <div class="section__head">
             <h2 id="teams-title">Built for the people who answer for the portfolio</h2>
@@ -109,7 +156,7 @@
         </div>
       </section>
 
-      <section class="section section--soft" id="product" aria-labelledby="product-title">
+      <section class="section" id="product" aria-labelledby="product-title">
         <div class="wrap">
           <div class="section__head">
             <h2 id="product-title">One platform from portfolio to task</h2>
@@ -160,6 +207,27 @@
         </div>
       </section>
 
+      <section class="section section--soft" id="demo" aria-labelledby="demo-title">
+        <div class="wrap demo-cta">
+          <div>
+            <h2 id="demo-title">Try the interactive demo</h2>
+            <p>
+              Explore a complete portfolio for a fictional ministry with ten projects, with an eight-minute narrated guided
+              tour. The demo is available to organisations on request.
+            </p>
+          </div>
+          <ol class="steps">
+            <li><b>Request access.</b> Tell us who you are and which organisation you represent.</li>
+            <li><b>Receive your access code.</b> We reply by email with a personal code.</li>
+            <li><b>Open the demo.</b> Enter the code on the demo page. It runs in your browser, and nothing you enter is sent anywhere.</li>
+          </ol>
+          <div class="actions">
+            <a class="button" href="demo.html">Request demo access</a>
+            <a class="button button--outline" href="demo.html#open">I have an access code</a>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="get" aria-labelledby="get-title">
         <div class="wrap">
           <div class="section__head">
@@ -186,7 +254,7 @@
               <h3>Android</h3>
               <p>The same offline projects, budgets, milestones and tasks on your phone, protected by the Android Keystore.</p>
               <p class="card__note">The first time, Android asks you to allow installs from your browser or Files app.</p>
-              <p class="card__meta">Android phones and tablets. Install the APK file you download.</p>
+              <p class="card__meta">Android 7.0 or later, phones and tablets. Install the APK file you download.</p>
               <a class="button" data-link="android" href="#get">Download for Android</a>
             </li>
           </ul>
@@ -295,7 +363,7 @@
           <p>Start with a free workspace, or ask us for a walkthrough with your own project list.</p>
           <div class="actions actions--center">
             <a class="button button--light" data-link="signup" href="#get">Create a free workspace</a>
-            <a class="button button--ghost" data-link="contact" href="#contact">Book a walkthrough</a>
+            <a class="button button--ghost" href="demo.html">Request the interactive demo</a>
           </div>
         </div>
       </section>
@@ -314,7 +382,9 @@
           <h2>Product</h2>
           <ul>
             <li><a href="#product">Product tour</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#teams">Who it's for</a></li>
+            <li><a href="demo.html">Interactive demo</a></li>
             <li><a href="#plans">Pricing</a></li>
             <li><a href="#security">Security</a></li>
           </ul>

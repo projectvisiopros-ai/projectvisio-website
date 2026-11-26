@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive demo: ProjectVisio</title>
+    <meta name="description" content="Request access to the ProjectVisio interactive demo, or open it with your access code." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="site.js" defer></script>
+    <script src="demo.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="masthead">
+      <div class="wrap masthead__row">
+        <a class="brand" href="./" aria-label="ProjectVisio home">
+          <img src="favicon.svg" alt="" width="30" height="30" />
+          <span>ProjectVisio</span>
+        </a>
+        <nav aria-label="Main" class="nav">
+          <a href="./#about">About</a>
+          <a href="./#product">Product</a>
+          <a href="./#get">Apps</a>
+          <a href="./#plans">Pricing</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero hero--compact" aria-labelledby="demo-page-title">
+        <div class="wrap hero__inner">
+          <p class="hero__kicker">Interactive demo</p>
+          <h1 id="demo-page-title">Explore ProjectVisio with a complete sample portfolio</h1>
+          <p class="lede">
+            A fictional ministry with ten projects, every dashboard and report, and an eight-minute narrated guided tour. The
+            demo is available to organisations on request.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="wrap demo-grid">
+          <form class="card form" id="request-form" aria-labelledby="request-title" novalidate>
+            <h2 id="request-title">Request access</h2>
+            <p>
+              Fill in your details and select the button. Your email app opens with a message to the ProjectVisio team, ready
+              to send. We reply with your personal access code.
+            </p>
+            <div class="form__row">
+              <label for="r-name">Full name</label>
+              <input id="r-name" name="name" autocomplete="name" required />
+            </div>
+            <div class="form__row">
+              <label for="r-position">Position</label>
+              <input id="r-position" name="position" autocomplete="organization-title" required />
+            </div>
+            <div class="form__row">
+              <label for="r-org">Organisation</label>
+              <input id="r-org" name="organisation" autocomplete="organization" required />
+            </div>
+            <div class="form__row">
+              <label for="r-email">Work email</label>
+              <input id="r-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form__row">
+              <label for="r-phone">Contact number <span class="optional">(optional)</span></label>
+              <input id="r-phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="form__row">
+              <label for="r-notes">What would you like to see? <span class="optional">(optional)</span></label>
+              <textarea id="r-notes" name="notes" rows="3"></textarea>
+            </div>
+            <p class="form__error" id="request-error" role="alert" hidden></p>
+            <button class="button" type="submit" id="request-submit">Email my request</button>
+            <p class="form__hint" id="request-fallback" hidden></p>
+          </form>
+
+          <form class="card form" id="open" aria-labelledby="open-title" novalidate>
+            <h2 id="open-title">Open the demo</h2>
+            <p>Enter the access code from our email. The demo then opens in this browser window.</p>
+            <div class="form__row">
+              <label for="code">Access code</label>
+              <input id="code" name="code" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="PV-XXXXX-XXXXX-XXXXX-XXXXX" required />
+            </div>
+            <p class="form__error" id="open-error" role="alert" hidden></p>
+            <p class="form__status" id="open-status" role="status"></p>
+            <button class="button" type="submit" id="open-submit">Open the demo</button>
+            <ul class="fineprint">
+              <li>The demo runs entirely in your browser. Nothing you enter in it is sent anywhere, and it resets each time it opens.</li>
+              <li>It is about 6 MB and works best on a laptop or desktop screen.</li>
+              <li>All names, projects and figures in the demo are fictional.</li>
+            </ul>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer footer--slim">
+      <div class="wrap footer__base">
+        <span>ProjectVisio</span>
+        <a href="./">Back to the home page</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -9,8 +9,8 @@ window.PV_SITE = {
   // Download links. With the files attached to a GitHub Release of this repository, use:
   //   https://github.com/<your-account>/<this-repository>/releases/latest/download/ProjectVisio-Windows.exe
   //   https://github.com/<your-account>/<this-repository>/releases/latest/download/ProjectVisio-Android.apk
-  windowsDownload: "",
-  androidDownload: "",
+  windowsDownload: "downloads/ProjectVisio-Windows.exe",
+  androidDownload: "downloads/ProjectVisio-Android.apk",
 
   // Set to true once the Windows app is code-signed; until then the page explains the warning.
   windowsSigned: false,

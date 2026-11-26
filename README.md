@@ -15,18 +15,14 @@ GitHub Pages is free for public repositories only (private repositories need a p
 
 The empty `.nojekyll` file tells GitHub to publish the files exactly as they are. Keep it.
 
-## 2. Add the downloads
+## 2. The downloads
 
-App files are too large to keep in the repository itself (GitHub blocks files over 100 MiB), so they go in a **Release**:
+The apps are served from the `downloads` folder of this repository:
 
-1. In the website repository, open **Releases > Draft a new release**.
-2. Create a tag such as `v0.1.0` and a title such as `ProjectVisio 0.1.0`.
-3. Attach the app files with exactly these names, so the links on the site never need to change:
-   - `ProjectVisio-Windows.exe`
-   - `ProjectVisio-Android.apk` (from the *Build Android app* workflow in your private repository)
-4. Publish the release.
+- `downloads/ProjectVisio-Windows.exe` (portable Windows app, about 104 MB)
+- `downloads/ProjectVisio-Android.apk` (Android 7.0 or later, about 93 MB)
 
-For a new version, publish a new release with files of the same names. The links always fetch the files from the latest release.
+GitHub refuses any single file over 100 MiB (104,857,600 bytes), and the Windows app is close to that limit. It fits because Windows builds leave out unused interface languages, binaries for other platforms and the database engine's source code (see `build.win.files` in the desktop app's `package.json`). If a future version no longer fits, publish it as a **Release** instead (Releases accept files up to 2 GiB): attach the files under the same names, and point `windowsDownload` and `androidDownload` in `config.js` at `https://github.com/<account>/projectvisio-website/releases/latest/download/<file name>`.
 
 ## 3. Point the site at your addresses
 
@@ -35,8 +31,8 @@ Edit `config.js` (on GitHub: open the file and choose the pencil icon), then com
 | Setting | What to enter |
 | --- | --- |
 | `appUrl` | Your deployed ProjectVisio server, for example `https://app.yourcompany.com`. Sign-up buttons go to its `/signup` page. |
-| `windowsDownload` | `https://github.com/<your-account>/projectvisio-website/releases/latest/download/ProjectVisio-Windows.exe` |
-| `androidDownload` | `https://github.com/<your-account>/projectvisio-website/releases/latest/download/ProjectVisio-Android.apk` |
+| `windowsDownload` | `downloads/ProjectVisio-Windows.exe` (or a Release address, see section 2) |
+| `androidDownload` | `downloads/ProjectVisio-Android.apk` (or a Release address, see section 2) |
 | `windowsSigned` | `true` once the Windows app is code-signed; until then the page explains the Windows warning. |
 | `proPrice` | How you sell Pro, for example `$29 per workspace per month`. Empty shows "Contact us for pricing". |
 | `contactEmail` | Your sales or support address. Contact links stay hidden until this is set. |

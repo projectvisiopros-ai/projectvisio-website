@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ProjectVisio: portfolio dashboards for project offices</title>
+    <meta
+      name="description"
+      content="ProjectVisio shows every project, budget and milestone in your portfolio in one view, in the browser, on Windows and on Android, online or offline."
+    />
+    <meta property="og:title" content="ProjectVisio: portfolio dashboards for project offices" />
+    <meta property="og:description" content="Every project, every dollar and every milestone in one view. Works in the browser, on Windows and on Android." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/product-dashboard.webp" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <aside class="announce" aria-label="Announcement">
+      <p>New: Windows and Android apps that keep working without a connection. <a href="#get">See the apps</a></p>
+    </aside>
+
+    <header class="masthead">
+      <div class="wrap masthead__row">
+        <a class="brand" href="#top" aria-label="ProjectVisio home">
+          <img src="favicon.svg" alt="" width="30" height="30" />
+          <span>ProjectVisio</span>
+        </a>
+        <nav aria-label="Main" class="nav">
+          <a href="#product">Product</a>
+          <a href="#teams">Who it's for</a>
+          <a href="#get">Apps</a>
+          <a href="#plans">Pricing</a>
+          <a href="#security">Security</a>
+        </nav>
+        <div class="masthead__actions">
+          <a class="link-quiet" data-link="login" href="#get">Log in</a>
+          <a class="button button--small" data-link="signup" href="#get">Start free</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="wrap hero__inner">
+          <p class="hero__kicker">Portfolio dashboards for project offices</p>
+          <h1 id="hero-title">See every project, every dollar and every milestone in one view.</h1>
+          <p class="lede">
+            ProjectVisio turns your project register into a live portfolio dashboard, so leadership reviews start from
+            <strong>the same numbers your teams keep up to date</strong>, in the browser, on Windows and on Android.
+          </p>
+          <div class="actions actions--center">
+            <a class="button" data-link="signup" href="#get">Create a free workspace</a>
+            <a class="button button--outline" data-link="contact" href="#contact">Book a walkthrough</a>
+          </div>
+          <p class="hero__note">Free for up to 5 projects per workspace. No card needed.</p>
+        </div>
+        <div class="wrap">
+          <figure class="frame frame--hero">
+            <div class="frame__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img
+              src="images/product-dashboard.webp"
+              width="1600"
+              height="1000"
+              alt="The ProjectVisio portfolio dashboard: eight projects, a $17.8M approved budget, 50% of budget used and three projects needing attention."
+              fetchpriority="high"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="teams" aria-labelledby="teams-title">
+        <div class="wrap">
+          <div class="section__head">
+            <h2 id="teams-title">Built for the people who answer for the portfolio</h2>
+            <p>One shared view, with the detail each team needs.</p>
+          </div>
+          <ul class="tiles">
+            <li class="tile">
+              <h3>Project management offices</h3>
+              <p>Keep the register, status and phase of every project current, and run the monthly review from it.</p>
+            </li>
+            <li class="tile">
+              <h3>Finance and budget owners</h3>
+              <p>Compare approved budget, spend and earned value by division, with a cost performance index per project.</p>
+            </li>
+            <li class="tile">
+              <h3>Programme and project managers</h3>
+              <p>Track milestones against plan, see what slipped, and break the work into tasks with owners.</p>
+            </li>
+            <li class="tile">
+              <h3>Leadership teams</h3>
+              <p>Open one dashboard before the meeting and go straight to the projects that need a decision.</p>
+            </li>
+            <li class="tile">
+              <h3>Site and field teams</h3>
+              <p>Update projects, budgets and tasks on Windows or Android without a signal, and sync later.</p>
+            </li>
+            <li class="tile">
+              <h3>Consultancies with several clients</h3>
+              <p>Give each client or unit its own workspace, members and plan, and switch between them in one account.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="product" aria-labelledby="product-title">
+        <div class="wrap">
+          <div class="section__head">
+            <h2 id="product-title">One platform from portfolio to task</h2>
+            <p>Choose a view to see it in the product.</p>
+          </div>
+          <div class="tour">
+            <div class="tour__list" role="tablist" aria-label="Product views" aria-orientation="vertical">
+              <button type="button" class="tour__tab" role="tab" id="tab-dashboard" aria-controls="panel-dashboard" aria-selected="true">
+                <span class="tour__title">Portfolio dashboard</span>
+                <span class="tour__text">Status, phase and spend for every project roll up into one screen.</span>
+              </button>
+              <button type="button" class="tour__tab" role="tab" id="tab-portfolio" aria-controls="panel-portfolio" aria-selected="false" tabindex="-1">
+                <span class="tour__title">Health and budget by division</span>
+                <span class="tour__text">See how many projects are on track, and where each division's money has gone.</span>
+              </button>
+              <button type="button" class="tour__tab" role="tab" id="tab-financial" aria-controls="panel-financial" aria-selected="false" tabindex="-1">
+                <span class="tour__title">Financial report</span>
+                <span class="tour__text">Budget, spend and earned value with a cost performance index, filtered by over or under plan.</span>
+              </button>
+              <button type="button" class="tour__tab" role="tab" id="tab-timeline" aria-controls="panel-timeline" aria-selected="false" tabindex="-1">
+                <span class="tour__title">Timeline and milestones</span>
+                <span class="tour__text">Actual progress against planned progress, with today marked and late milestones flagged.</span>
+              </button>
+              <button type="button" class="tour__tab" role="tab" id="tab-tasks" aria-controls="panel-tasks" aria-selected="false" tabindex="-1">
+                <span class="tour__title">Tasks</span>
+                <span class="tour__text">Owners, due dates and status for the work inside each project.</span>
+              </button>
+            </div>
+            <div class="tour__panels">
+              <figure class="frame tour__panel" role="tabpanel" id="panel-dashboard" aria-labelledby="tab-dashboard">
+                <img src="images/product-dashboard.webp" width="1600" height="1000" loading="lazy" alt="Portfolio dashboard with project count, approved budget, budget used and projects needing attention." />
+              </figure>
+              <figure class="frame tour__panel" role="tabpanel" id="panel-portfolio" aria-labelledby="tab-portfolio" hidden>
+                <img src="images/product-portfolio.webp" width="1600" height="910" loading="lazy" alt="Projects by status, budget and spend by division, and recently updated projects with progress." />
+              </figure>
+              <figure class="frame tour__panel" role="tabpanel" id="panel-financial" aria-labelledby="tab-financial" hidden>
+                <img src="images/product-financial.webp" width="1600" height="1048" loading="lazy" alt="Financial report with a division breakdown and spend against progress for each project, including cost performance index." />
+              </figure>
+              <figure class="frame tour__panel" role="tabpanel" id="panel-timeline" aria-labelledby="tab-timeline" hidden>
+                <img src="images/product-timeline.webp" width="1600" height="897" loading="lazy" alt="Gantt timeline of eight projects showing actual against planned progress, a today line and milestone markers." />
+              </figure>
+              <figure class="frame tour__panel" role="tabpanel" id="panel-tasks" aria-labelledby="tab-tasks" hidden>
+                <img src="images/product-tasks.webp" width="1600" height="1028" loading="lazy" alt="Task list for a project with assignees, due dates and statuses of to do, in progress and done." />
+              </figure>
+            </div>
+          </div>
+          <p class="caption">Screens from the product with sample data.</p>
+        </div>
+      </section>
+
+      <section class="section" id="get" aria-labelledby="get-title">
+        <div class="wrap">
+          <div class="section__head">
+            <h2 id="get-title">Works where your team works</h2>
+            <p>One account everywhere. Start in the browser, then add the apps for people on site or travelling.</p>
+          </div>
+          <ul class="cards cards--3">
+            <li class="card">
+              <h3>In your browser</h3>
+              <p>The full product: dashboards, financial report, timelines, tasks, team and billing. Nothing to install.</p>
+              <p class="card__meta">Any current browser on Windows, macOS, Linux, iPhone or Android.</p>
+              <a class="button" data-link="app" href="#get">Open the web app</a>
+            </li>
+            <li class="card">
+              <h3>Windows</h3>
+              <p>Projects, budgets, milestones and tasks, offline and in sync. Data on the computer is encrypted.</p>
+              <p class="card__note" data-show-if-unsigned hidden>
+                Until the app is signed, Windows may show "Windows protected your PC". Choose More info, then Run anyway.
+              </p>
+              <p class="card__meta">Windows 10 or 11, 64-bit. Runs without installation.</p>
+              <a class="button" data-link="windows" href="#get">Download for Windows</a>
+            </li>
+            <li class="card">
+              <h3>Android</h3>
+              <p>The same offline projects, budgets, milestones and tasks on your phone, protected by the Android Keystore.</p>
+              <p class="card__note">The first time, Android asks you to allow installs from your browser or Files app.</p>
+              <p class="card__meta">Android phones and tablets. Install the APK file you download.</p>
+              <a class="button" data-link="android" href="#get">Download for Android</a>
+            </li>
+          </ul>
+          <p class="caption">Not available yet: an iPhone app and Mac and Linux desktop apps. Use the web app on those devices.</p>
+        </div>
+      </section>
+
+      <section class="section section--dark" id="security" aria-labelledby="security-title">
+        <div class="wrap">
+          <div class="section__head">
+            <h2 id="security-title">Ready for data you are responsible for</h2>
+            <p>Security is part of how every screen works, not an add-on.</p>
+          </div>
+          <ul class="cards cards--3 cards--dark">
+            <li class="card">
+              <h3>Separate workspaces</h3>
+              <p>
+                Every request is limited to the organisation it belongs to. Owners, admins, members and viewers can each do
+                exactly what their role allows, checked on the server for every change.
+              </p>
+            </li>
+            <li class="card">
+              <h3>Account protection</h3>
+              <p>
+                Two-factor sign-in with an authenticator app and backup codes, a list of every signed-in device, and sign-out
+                of any of them. A password change signs out every other device.
+              </p>
+            </li>
+            <li class="card">
+              <h3>Encrypted offline copies</h3>
+              <p>
+                The Windows and Android apps encrypt the data they keep and hold the key in the device's secure storage.
+                Signing out deletes both.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="plans" aria-labelledby="plans-title">
+        <div class="wrap">
+          <div class="section__head">
+            <h2 id="plans-title">Simple pricing per workspace</h2>
+            <p>Every plan includes every feature and every app. Plans differ only in how many projects a workspace holds.</p>
+          </div>
+          <ul class="cards cards--2 plans">
+            <li class="card">
+              <h3>Free</h3>
+              <p class="plan__price">$0</p>
+              <p>Up to 5 projects per workspace. Ideal for trying ProjectVisio with a real programme.</p>
+              <a class="button button--outline" data-link="signup" href="#get">Create a free workspace</a>
+            </li>
+            <li class="card card--accent">
+              <h3>Pro</h3>
+              <p class="plan__price" data-pro-price>Contact us for pricing</p>
+              <p>Unlimited projects per workspace, for whole portfolios and growing teams.</p>
+              <a class="button" data-link="contact" href="#contact">Talk to us about Pro</a>
+            </li>
+          </ul>
+          <p class="included__label">Both plans include</p>
+          <ul class="included">
+            <li>Dashboard, financial report and timelines</li>
+            <li>Milestones and tasks</li>
+            <li>Team members with roles</li>
+            <li>Windows and Android apps with offline work</li>
+            <li>Two-factor sign-in</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="questions" aria-labelledby="questions-title">
+        <div class="wrap wrap--narrow">
+          <div class="section__head">
+            <h2 id="questions-title">Questions buyers ask</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Does my team need to install anything?</summary>
+              <p>No. Everything works in the browser. The Windows and Android apps are optional, for people who need to work offline.</p>
+            </details>
+            <details>
+              <summary>What happens to changes made offline?</summary>
+              <p>
+                They are saved on the device and sent as soon as it is back online. If someone else changed the same item in
+                the meantime, their version is kept and the app tells you which change was not saved.
+              </p>
+            </details>
+            <details>
+              <summary>Can we try it before we buy?</summary>
+              <p>Yes. The Free plan has every feature, limited to five projects per workspace. Upgrade a workspace to Pro when you need more.</p>
+            </details>
+            <details>
+              <summary>Can several departments or clients share one account?</summary>
+              <p>
+                Create a workspace for each of them. People can belong to several workspaces and switch between them, and each
+                workspace keeps its own members, roles and plan.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="contact" aria-labelledby="contact-title">
+        <div class="wrap cta__inner">
+          <h2 id="contact-title">Ready to run your next portfolio review from one view?</h2>
+          <p>Start with a free workspace, or ask us for a walkthrough with your own project list.</p>
+          <div class="actions actions--center">
+            <a class="button button--light" data-link="signup" href="#get">Create a free workspace</a>
+            <a class="button button--ghost" data-link="contact" href="#contact">Book a walkthrough</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__grid">
+        <div class="footer__brand">
+          <a class="brand brand--light" href="#top" aria-label="ProjectVisio home">
+            <img src="favicon.svg" alt="" width="28" height="28" />
+            <span>ProjectVisio</span>
+          </a>
+          <p>Portfolio dashboards for project offices.</p>
+        </div>
+        <nav aria-label="Product">
+          <h2>Product</h2>
+          <ul>
+            <li><a href="#product">Product tour</a></li>
+            <li><a href="#teams">Who it's for</a></li>
+            <li><a href="#plans">Pricing</a></li>
+            <li><a href="#security">Security</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Get the app">
+          <h2>Get the app</h2>
+          <ul>
+            <li><a data-link="app" href="#get">Web app</a></li>
+            <li><a data-link="windows" href="#get">Windows</a></li>
+            <li><a data-link="android" href="#get">Android</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h2>Company</h2>
+          <ul>
+            <li><a data-link="contact" href="#contact">Contact</a></li>
+            <li><a data-link="privacy" href="#contact">Privacy policy</a></li>
+            <li><a data-link="terms" href="#contact">Terms of service</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="wrap footer__base">
+        <span>ProjectVisio</span>
+      </div>
+    </footer>
+  </body>
+</html>

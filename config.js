@@ -4,7 +4,7 @@
  */
 window.PV_SITE = {
   // Your ProjectVisio server (the web app), once it is deployed, e.g. "https://app.yourcompany.com"
-  appUrl: "",
+  appUrl: "https://projectvisio.onrender.com",
 
   // Download links. With the files attached to a GitHub Release of this repository, use:
   //   https://github.com/<your-account>/<this-repository>/releases/latest/download/ProjectVisio-Windows.exe

@@ -226,8 +226,19 @@ img {
   letter-spacing: -0.01em;
   text-decoration: none;
 }
-.brand--light {
-  color: #fff;
+.brand__logo {
+  display: block;
+  height: 3rem;
+  width: auto;
+}
+/* On dark backgrounds the logo sits on a white badge, as on the dashboard's "Powered by" mark. */
+.brand--badge {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.5rem 0.8rem;
+}
+.brand--badge .brand__logo {
+  height: 2.4rem;
 }
 .nav {
   display: flex;
